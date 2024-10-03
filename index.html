@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="爽印" />
+    <meta property="og:description" content="レシート領収書作成｜爽印" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1002439677539778623/1286198906400804914/sawazirushiicon.png?ex=66ed0993&is=66ebb813&hm=c0634019dfa7435630fbe095451958a5d1cbfdd9ed11a2cf4508703593b5bc86&" />
+    <meta property="og:url" content="https://sawazirushi.github.io/receipt/" />
+    <title>レシート領収書作成</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.ico" sizes="180x180">
+    <link rel="icon" type="image/png" href="./favicon.ico" sizes="192x192">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <button onclick="toggleView('receipt')">レシート作成</button>
+        <button onclick="toggleView('invoice')">領収書作成</button>
+    </div>
+
+    <div class="form-section" id="receipt-section">
+        <h2>レシート作成</h2>
+        <label for="date">日付: </label>
+        <input type="text" id="receiptDate" placeholder="2024/10/03"><br><br>
+        <table id="receiptTable">
+            <tr>
+                <th>商品名</th>
+                <th>個数</th>
+                <th>値段</th>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="商品名"></td>
+                <td><input type="number" placeholder="個数"></td>
+                <td><input type="text" placeholder="値段"></td>
+            </tr>
+        </table>
+        <button class="button" onclick="addRow('receiptTable')">商品を追加</button>
+        <button class="button" onclick="removeRow('receiptTable')">商品を削除</button>
+        <br><br>
+        <label for="total">合計: </label>
+        <input type="text" id="receiptTotal" placeholder="合計金額"><br><br>
+        <button class="button" onclick="createReceipt()">レシートを作成</button>
+    </div>
+
+    <div class="form-section" id="invoice-section">
+        <h2>領収書作成</h2>
+        <label for="invoiceDate">日付: </label>
+        <input type="text" id="invoiceDate" placeholder="2024/10/03"><br><br>
+        <label for="recipient">宛名: </label>
+        <input type="text" id="recipient" placeholder="宛名"><br><br>
+        <label for="invoiceTotal">合計: </label>
+        <input type="text" id="invoiceTotal" placeholder="合計金額"><br><br>
+        <button class="button" onclick="createInvoice()">領収書を作成</button>
+    </div>
+
+    <div class="display-section">
+        <div id="receipt-display" class="receipt-display">
+            <h2>商店 レシート</h2>
+            <img src="logo.png" class="logo" alt="店舗ロゴ">
+            <p>日付: <span id="display-receiptDate"></span></p>
+            <div class="label-row">
+                <span>商品名</span>
+                <span>個数</span>
+                <span>値段</span>
+            </div>
+            <div id="display-receiptTable"></div>
+            <p>合計: <span id="display-receiptTotal"></span></p>
+        </div>
+
+        <div id="invoice-display" class="invoice-display">
+            <h2>領収書</h2>
+            <p>日付: <span id="display-invoiceDate"></span></p>
+            <p>宛名: <span id="display-recipient"></span></p>
+            <p>合計: <span id="display-invoiceTotal"></span></p>
+            <p>上記正に領収いたしました。</p>
+            <img src="logo.png" class="logo-invoice" alt="店舗ロゴ">
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

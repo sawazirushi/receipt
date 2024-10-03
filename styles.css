@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.header button:hover {
+    background-color: #0056b3;
+}
+.form-section {
+    display: none;
+}
+.form-section.active {
+    display: block;
+}
+.receipt-display, .invoice-display {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #000;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.receipt-display.active, .invoice-display.active {
+    display: block;
+}
+
+#receipt-display {
+    width: 400px;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fafafa;
+    position: relative;
+}
+
+#invoice-display {
+    width: 600px;
+    text-align: left;
+    background-color: #fefefe;
+    position: relative;
+}
+
+.receipt-row {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: darkblue;
+}
+.display-section {
+    margin-top: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.logo-invoice {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: auto;
+}
