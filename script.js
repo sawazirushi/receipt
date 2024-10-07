@@ -26,7 +26,7 @@ function addRow(tableID) {
 function removeRow(tableID) {
     let table = document.getElementById(tableID);
     if (table.rows.length > 2) {
-        table.deleteRow(-1);
+        table.deleteRow(table.rows.length - 1);
     }
 }
 
@@ -34,7 +34,7 @@ function createReceipt() {
     let date = document.getElementById('receiptDate').value;
     let total = document.getElementById('receiptTotal').value;
     document.getElementById('display-receiptDate').innerText = date;
-    document.getElementById('display-receiptTotal').innerText = total;
+    document.getElementById('display-receiptTotalValue').innerText = total; // 合計金額を右に表示
 
     let receiptTable = document.getElementById('receiptTable');
     let displayReceiptTable = document.getElementById('display-receiptTable');
